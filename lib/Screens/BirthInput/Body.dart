@@ -19,27 +19,36 @@ class _BodyState extends State<Body> {
             ),
             Expanded(
               flex: 3,
-              child: Column(
-                children: [
-                  Text(
-                    'TimeMatters',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    Text(
+                      'TimeMatters',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.orange,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Welcome to TimeMatters, Let's explore!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey,
+                    SizedBox(
+                      height: 10,
                     ),
-                  ),
-                ],
+                    Text(
+                      "Welcome to TimeMatters, Let's explore!",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Image.asset(
+                      'assets/images/ilovemytime.png',
+                    )
+                  ],
+                ),
               ),
             ),
             Expanded(
