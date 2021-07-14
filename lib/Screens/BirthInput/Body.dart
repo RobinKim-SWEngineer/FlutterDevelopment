@@ -27,7 +27,7 @@ class _BodyState extends State<Body> {
                       'TimeMatters',
                       style: TextStyle(
                         fontSize: 30,
-                        color: Colors.orange,
+                        color: Colors.deepOrange,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -39,6 +39,7 @@ class _BodyState extends State<Body> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: Colors.grey,
+                        fontSize: 15,
                       ),
                     ),
                     SizedBox(
@@ -53,7 +54,31 @@ class _BodyState extends State<Body> {
             ),
             Expanded(
               flex: 2,
-              child: SizedBox(),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Calculate',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Colors.deepOrange,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15)))
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
