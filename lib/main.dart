@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:demo/Screens/BirthInput/birthdateInput.dart';
+import 'package:demo/Screens/BirthInput/birthdate_input_screen.dart';
 
 void main() {
   runApp(

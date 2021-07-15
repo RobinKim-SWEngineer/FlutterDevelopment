@@ -11,22 +11,27 @@ class _BodyState extends State<Body> {
 
   _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
-        context: context,
-        initialDate: _selectedDate,
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now());
+      context: context,
+      initialDate: _selectedDate,
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
 
     if (pickedDate != null) {
       setState(() {
         _selectedDate = pickedDate;
         _showSnackBarMessage(
-            message: 'Your birth date is selected!', context: context);
+          message: 'Your birth date is selected!',
+          context: context,
+        );
       });
     }
   }
 
-  ScaffoldFeatureController _showSnackBarMessage(
-      {required String message, required BuildContext context}) {
+  ScaffoldFeatureController _showSnackBarMessage({
+    required String message,
+    required BuildContext context,
+  }) {
     return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(
         message,
@@ -126,11 +131,14 @@ class _BodyState extends State<Body> {
                             ),
                           ),
                           style: TextButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Colors.deepOrange,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)))),
+                            primary: Colors.white,
+                            backgroundColor: Colors.deepOrange,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
