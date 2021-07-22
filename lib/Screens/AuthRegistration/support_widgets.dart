@@ -87,6 +87,26 @@ class RegisterButton extends StatelessWidget {
   }
 }
 
+class Background extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFDE8484),
+            Color(0xFFE37777),
+            Color(0xFFEF7878),
+            Color(0xFFB36A6A),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 Decoration drawBorder({required Color color, required double width}) {
   return BoxDecoration(
     border: Border.all(

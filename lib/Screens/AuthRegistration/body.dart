@@ -52,20 +52,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFFDE8484),
-                Color(0xFFE37777),
-                Color(0xFFEF7878),
-                Color(0xFFB36A6A),
-              ],
-            ),
-          ),
-        ),
+        Background(),
         Container(
           height: double.infinity,
           width: double.infinity,
