@@ -8,12 +8,13 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  Widget _buildInputFrame(
-      {required String label,
-      required String inputHint,
-      required bool shouldInputBeObscured,
-      required IconData prefixIcon,
-      required TextInputType inputType}) {
+  Widget _buildInputFrame({
+    required String label,
+    required String inputHint,
+    required bool shouldInputBeObscured,
+    required IconData prefixIcon,
+    required TextInputType inputType,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,9 +22,7 @@ class _BodyState extends State<Body> {
           label,
           style: labelTextStyle,
         ),
-        SizedBox(
-          height: 5,
-        ),
+        SizedBox(height: 5),
         Container(
           height: MediaQuery.of(context).copyWith().size.height / 18,
           decoration: inputBoxDecorationStyle,
