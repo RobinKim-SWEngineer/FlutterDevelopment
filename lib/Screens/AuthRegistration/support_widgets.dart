@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
       header,
       style: TextStyle(
         color: Colors.white,
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: FontWeight.bold,
       ),
     );
@@ -32,6 +32,61 @@ class Space extends StatelessWidget {
   }
 }
 
+class SignInTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Have an account ?',
+          style: TextStyle(color: Colors.white, fontSize: 15),
+        ),
+        TextButton(
+            onPressed: () {},
+            child: Text(
+              'Sign In',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Colors.white,
+              ),
+            ))
+      ],
+    );
+  }
+}
+
+class RegisterButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.all(10),
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            ),
+          ),
+        ),
+        child: Text(
+          'REGISTER',
+          style: TextStyle(
+            letterSpacing: 1,
+            fontSize: 20,
+            color: Colors.deepOrangeAccent,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: () {},
+      ),
+    );
+  }
+}
+
 Decoration drawBorder({required Color color, required double width}) {
   return BoxDecoration(
     border: Border.all(
@@ -46,15 +101,19 @@ final inputBoxDecorationStyle = BoxDecoration(
     borderRadius: BorderRadius.circular(10),
     boxShadow: [
       BoxShadow(
-        color: Colors.white12,
-        blurRadius: 5,
+        color: Colors.white,
+        blurRadius: 10,
         //offset: Offset(0, 2),
       ),
     ]);
 
 final hintTextStyle = TextStyle(
   color: Colors.white54,
+  fontSize: 13,
 );
 
-final labelTextStyle =
-    TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold);
+final labelTextStyle = TextStyle(
+  fontSize: 15,
+  color: Colors.white,
+  fontWeight: FontWeight.bold,
+);
