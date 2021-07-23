@@ -65,7 +65,9 @@ class _BodyState extends State<Body> {
             child: Column(
               children: [
                 Header('Sign Up'),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 _buildInputFrame(
                   label: 'Full Name',
                   inputHint: 'Enter your Name',
@@ -73,7 +75,9 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.name,
                   prefixIcon: Icons.account_circle_rounded,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 _buildInputFrame(
                   label: 'Phone No',
                   inputHint: 'Enter your Phone No',
@@ -81,7 +85,9 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.phone,
                   prefixIcon: Icons.phone_android,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 _buildInputFrame(
                   label: 'Email',
                   inputHint: 'Enter your Email',
@@ -89,7 +95,9 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.emailAddress,
                   shouldInputBeObscured: false,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 _buildInputFrame(
                   label: 'Password',
                   inputHint: 'Enter your Password',
@@ -97,7 +105,9 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.visiblePassword,
                   prefixIcon: Icons.lock,
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 _buildInputFrame(
                   label: 'Confirm Password',
                   inputHint: 'Enter Password again',
@@ -105,9 +115,13 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.visiblePassword,
                   prefixIcon: Icons.lock,
                 ),
-                SizedBox(height: 35,),
+                SizedBox(
+                  height: 35,
+                ),
                 RegisterButton(),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 SignInTab(),
               ],
             ),
