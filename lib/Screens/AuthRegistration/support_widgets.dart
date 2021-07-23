@@ -19,19 +19,6 @@ class Header extends StatelessWidget {
   }
 }
 
-class Space extends StatelessWidget {
-  Space(this.space);
-
-  final double space;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: space,
-    );
-  }
-}
-
 class SignInTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

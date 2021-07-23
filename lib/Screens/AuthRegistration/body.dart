@@ -65,7 +65,7 @@ class _BodyState extends State<Body> {
             child: Column(
               children: [
                 Header('Sign Up'),
-                Space(20),
+                SizedBox(height: 20,),
                 _buildInputFrame(
                   label: 'Full Name',
                   inputHint: 'Enter your Name',
@@ -73,7 +73,7 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.name,
                   prefixIcon: Icons.account_circle_rounded,
                 ),
-                Space(20),
+                SizedBox(height: 20,),
                 _buildInputFrame(
                   label: 'Phone No',
                   inputHint: 'Enter your Phone No',
@@ -81,7 +81,7 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.phone,
                   prefixIcon: Icons.phone_android,
                 ),
-                Space(20),
+                SizedBox(height: 20,),
                 _buildInputFrame(
                   label: 'Email',
                   inputHint: 'Enter your Email',
@@ -89,7 +89,7 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.emailAddress,
                   shouldInputBeObscured: false,
                 ),
-                Space(20),
+                SizedBox(height: 20,),
                 _buildInputFrame(
                   label: 'Password',
                   inputHint: 'Enter your Password',
@@ -97,7 +97,7 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.visiblePassword,
                   prefixIcon: Icons.lock,
                 ),
-                Space(20),
+                SizedBox(height: 20,),
                 _buildInputFrame(
                   label: 'Confirm Password',
                   inputHint: 'Enter Password again',
@@ -105,9 +105,9 @@ class _BodyState extends State<Body> {
                   inputType: TextInputType.visiblePassword,
                   prefixIcon: Icons.lock,
                 ),
-                Space(35),
+                SizedBox(height: 35,),
                 RegisterButton(),
-                Space(20),
+                SizedBox(height: 20,),
                 SignInTab(),
               ],
             ),
