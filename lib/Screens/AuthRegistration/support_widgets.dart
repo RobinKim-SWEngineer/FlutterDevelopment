@@ -20,8 +20,6 @@ class Header extends StatelessWidget {
 }
 
 class SignInTab extends StatelessWidget {
-  GlobalKey<RegistrationButtonState> keyRegisterationButton = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,9 +30,7 @@ class SignInTab extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 15),
         ),
         TextButton(
-          onPressed: () {
-            keyRegisterationButton.currentState!.changeButtonText('Boo');
-          },
+          onPressed: () {},
           child: Text(
             'Sign In',
             style: TextStyle(
