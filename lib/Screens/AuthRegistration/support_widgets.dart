@@ -20,6 +20,8 @@ class Header extends StatelessWidget {
 }
 
 class SignInTab extends StatelessWidget {
+  GlobalKey<RegistrationButtonState> keyRegisterationButton = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,46 +32,63 @@ class SignInTab extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontSize: 15),
         ),
         TextButton(
-            onPressed: () {},
-            child: Text(
-              'Sign In',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Colors.white,
-              ),
-            ))
+          onPressed: () {
+            keyRegisterationButton.currentState!.changeButtonText('Boo');
+          },
+          child: Text(
+            'Sign In',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: Colors.white,
+            ),
+          ),
+        ),
       ],
     );
   }
 }
 
-class RegisterButton extends StatelessWidget {
+class RegistrationButtonWithState extends StatefulWidget {
+  @override
+  RegistrationButtonState createState() => RegistrationButtonState();
+}
+
+class RegistrationButtonState extends State<RegistrationButtonWithState> {
+  VoidCallback? onRegistrationButtonPressed;
+  String buttonText = "REGISTER";
+
+  void changeButtonText(String newText) {
+    setState(() {
+      buttonText = newText;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    String textOriginal = buttonText;
     return Container(
       width: double.infinity,
       child: TextButton(
-        style: TextButton.styleFrom(
-          padding: EdgeInsets.all(10),
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.all(10),
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
+              ),
             ),
           ),
-        ),
-        child: Text(
-          'REGISTER',
-          style: TextStyle(
-            letterSpacing: 1,
-            fontSize: 20,
-            color: Colors.deepOrangeAccent,
-            fontWeight: FontWeight.bold,
+          child: Text(
+            textOriginal,
+            style: TextStyle(
+              letterSpacing: 1,
+              fontSize: 20,
+              color: Colors.deepOrangeAccent,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        onPressed: () {},
-      ),
+          onPressed: onRegistrationButtonPressed),
     );
   }
 }

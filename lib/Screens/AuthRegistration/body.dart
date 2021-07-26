@@ -118,7 +118,7 @@ class _BodyState extends State<Body> {
                 SizedBox(
                   height: 35,
                 ),
-                RegisterButton(),
+                RegistrationButtonWithState(),
                 SizedBox(
                   height: 20,
                 ),
