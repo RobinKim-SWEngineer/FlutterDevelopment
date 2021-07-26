@@ -20,7 +20,8 @@ class Header extends StatelessWidget {
 }
 
 class SignInTab extends StatelessWidget {
-  GlobalKey<RegistrationButtonState> keyRegisterationButton = GlobalKey();
+  SignInTab({required this.keyRegisterationButton});
+  GlobalKey<RegistrationButtonState> keyRegisterationButton;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +51,7 @@ class SignInTab extends StatelessWidget {
 }
 
 class RegistrationButtonWithState extends StatefulWidget {
+  const RegistrationButtonWithState({Key? key}) : super(key: key);
   @override
   RegistrationButtonState createState() => RegistrationButtonState();
 }

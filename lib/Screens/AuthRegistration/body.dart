@@ -8,6 +8,8 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  GlobalKey<RegistrationButtonState> keyRegisterationButton = GlobalKey();
+
   Widget _buildInputFrame({
     required String label,
     required String inputHint,
@@ -118,11 +120,11 @@ class _BodyState extends State<Body> {
                 SizedBox(
                   height: 35,
                 ),
-                RegistrationButtonWithState(),
+                RegistrationButtonWithState(key: keyRegisterationButton),
                 SizedBox(
                   height: 20,
                 ),
-                SignInTab(),
+                SignInTab(keyRegisterationButton: keyRegisterationButton)
               ],
             ),
           ),
