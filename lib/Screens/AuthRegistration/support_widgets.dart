@@ -122,7 +122,7 @@ InputDecoration getInputDecoration(InputType input) {
     errorStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
     helperStyle: TextStyle(fontSize: 12),
     prefixIcon: Icon(
-      Icons.lock,
+      _getIcon(input),
       color: Colors.white,
     ),
   );
@@ -140,6 +140,21 @@ String _getHint(InputType input) {
       return 'Enter your Password';
     case InputType.passwrdComfirmation:
       return 'Enter your Password again';
+  }
+}
+
+IconData _getIcon(InputType input) {
+  switch (input) {
+    case InputType.fullName:
+      return Icons.account_circle_rounded;
+    case InputType.phoneNo:
+      return Icons.phone_android;
+    case InputType.email:
+      return Icons.email;
+    case InputType.password:
+      return Icons.lock;
+    case InputType.passwrdComfirmation:
+      return Icons.lock;
   }
 }
 
