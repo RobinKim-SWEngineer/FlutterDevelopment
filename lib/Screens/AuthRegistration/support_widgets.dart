@@ -1,3 +1,4 @@
+import 'package:demo/Screens/AuthRegistration/input_validation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -45,24 +46,12 @@ class SignInTab extends StatelessWidget {
   }
 }
 
-class RegistrationButtonWithState extends StatefulWidget {
-  @override
-  RegistrationButtonState createState() => RegistrationButtonState();
-}
-
-class RegistrationButtonState extends State<RegistrationButtonWithState> {
-  VoidCallback? onRegistrationButtonPressed;
-  String buttonText = "REGISTER";
-
-  void changeButtonText(String newText) {
-    setState(() {
-      buttonText = newText;
-    });
-  }
+class RegistrationButton extends StatelessWidget {
+  RegistrationButton(this.formKey);
+  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
-    String textOriginal = buttonText;
     return Container(
       width: double.infinity,
       child: TextButton(
@@ -76,7 +65,7 @@ class RegistrationButtonState extends State<RegistrationButtonWithState> {
             ),
           ),
           child: Text(
-            textOriginal,
+            'REGISTER',
             style: TextStyle(
               letterSpacing: 1,
               fontSize: 20,
@@ -84,7 +73,10 @@ class RegistrationButtonState extends State<RegistrationButtonWithState> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          onPressed: onRegistrationButtonPressed),
+          onPressed: () {
+            formKey.currentState!.save();
+            formKey.currentState!.validate();
+          }),
     );
   }
 }
@@ -116,6 +108,39 @@ Decoration drawBorder({required Color color, required double width}) {
       width: width,
     ),
   );
+}
+
+InputDecoration getInputDecoration(InputType input) {
+  return InputDecoration(
+    contentPadding: EdgeInsets.all(4.5),
+    hintText: _getHint(input),
+    helperText: '',
+    hintStyle: hintTextStyle,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    errorStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+    helperStyle: TextStyle(fontSize: 12),
+    prefixIcon: Icon(
+      Icons.lock,
+      color: Colors.white,
+    ),
+  );
+}
+
+String _getHint(InputType input) {
+  switch (input) {
+    case InputType.fullName:
+      return 'Enter your Name';
+    case InputType.phoneNo:
+      return 'Enter your Phone No';
+    case InputType.email:
+      return 'Enter your Email';
+    case InputType.password:
+      return 'Enter your Password';
+    case InputType.passwrdComfirmation:
+      return 'Enter your Password again';
+  }
 }
 
 final inputBoxDecorationStyle = BoxDecoration(
