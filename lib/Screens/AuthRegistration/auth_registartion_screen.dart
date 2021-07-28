@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:demo/Screens/AuthRegistration/body.dart';
+//import 'package:demo/Screens/AuthRegistration/components/body.dart';
+import 'package:demo/Screens/AuthRegistration/components/body_refactored.dart';
 
 class AuthRegistrationScreen extends StatefulWidget {
   @override

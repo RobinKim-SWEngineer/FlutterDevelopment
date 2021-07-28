@@ -1,4 +1,4 @@
-import 'package:demo/Screens/AuthRegistration/input_validation.dart';
+import 'package:demo/Screens/AuthRegistration/components/input_validation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -47,8 +47,8 @@ class SignInTab extends StatelessWidget {
 }
 
 class RegistrationButton extends StatelessWidget {
-  RegistrationButton(this.formKey);
-  final GlobalKey<FormState> formKey;
+  RegistrationButton(this.validateAllInput);
+  Function validateAllInput;
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +73,7 @@ class RegistrationButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          onPressed: () {
-            formKey.currentState!.save();
-            formKey.currentState!.validate();
-          }),
+          onPressed: () {}),
     );
   }
 }
@@ -110,7 +107,8 @@ Decoration drawBorder({required Color color, required double width}) {
   );
 }
 
-InputDecoration getInputDecoration(InputType input) {
+InputDecoration getInputDecoration(
+    {required InputType input, String? errorText}) {
   return InputDecoration(
     contentPadding: EdgeInsets.all(4.5),
     hintText: _getHint(input),
@@ -119,7 +117,12 @@ InputDecoration getInputDecoration(InputType input) {
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
     ),
-    errorStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+    errorStyle: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.red,
+    ),
+    errorText: errorText,
     helperStyle: TextStyle(fontSize: 12),
     prefixIcon: Icon(
       _getIcon(input),
