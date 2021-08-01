@@ -1,11 +1,16 @@
+import 'package:demo/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:demo/Screens/AuthRegistration/auth_registartion_screen.dart';
+import 'constants.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthRegistrationScreen(),
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: WelcomeScreen(),
     ),
   );
 }
